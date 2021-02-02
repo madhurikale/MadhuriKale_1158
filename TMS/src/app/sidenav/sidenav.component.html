@@ -1,0 +1,72 @@
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+           
+            <label class="navbar-brand">TMS</label>
+        </div>
+        <div style="color: white;
+                    padding: 15px 50px 5px 50px;
+                    float: right;
+                font-size: 16px;">{{name}}({{role}})  <a (click)="onLogout()" class="btn btn-danger square-btn-adjust">Logout</a>
+        </div>
+
+    </nav>
+
+    <!-- /. NAV TOP  -->
+    <nav class="navbar-default navbar-side" role="navigation ">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li class="text-center">
+
+                    <img src="assets/img/find_user.png" class="user-image img-responsive" />
+
+                </li>
+
+
+                <li>
+                    <a *ngIf="isProjectManager || isTrainingCoordinator"  routerLink="/home/dashboard"><i class="fa fa-dashboard fa-3x"></i>
+                        Dashboard</a>
+                </li>
+                <li>
+                    <a *ngIf="isProjectManager" routerLink="/home/training-request"><i class="fa fa-qrcode fa-3x"></i>Apply For Traning</a>
+                </li>
+                
+                <li>
+                    <a *ngIf="isProjectManager" routerLink="/home/request-status"><i class="fa fa-qrcode fa-3x"></i>Request Status</a>
+                </li>
+                <li>
+                    <a  *ngIf="isProjectManager || isTrainingCoordinator" routerLink="/home/technology"><i class="fa fa-bar-chart-o fa-3x"></i>Technology</a>
+                </li>
+
+
+
+
+               <!-- <li>
+                    <a href="#"><i class="fa fa-square-o fa-3x"></i> Feedback</a>
+                </li>-->
+                <li>
+                    <a *ngIf="isProjectManager || isTrainingCoordinator" routerLink="/home/history"><i class="fa fa-square-o fa-3x"></i> History</a>
+                </li>
+
+                <li>
+                    <a *ngIf="isTrainingCoordinator" routerLink="/home/incoming-request"><i class="fa fa-square-o fa-3x"></i>Incoming Request</a>
+                </li>
+                <li>
+                    <a *ngIf="isProjectManager || isTrainingCoordinator" routerLink="/home/trainer"><i class="fa fa-square-o fa-3x"></i>Trainer</a>
+                </li>
+                <li>
+                    <a *ngIf="isAdmin" routerLink="/home/user"><i class="fa fa-square-o fa-3x"></i>User</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div id="page-wrapper">
+        <div id="page-inner">
+
+<router-outlet></router-outlet>
+</div>
+</div>
+
+</div>

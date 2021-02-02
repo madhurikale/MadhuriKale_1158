@@ -1,0 +1,70 @@
+<form [formGroup]="trainingForm">
+  <div class="mysection">
+    <div class="card ">
+      <div class="card-header">
+        <h3>{{training ? 'Update Training Request':'Request For Training'}}</h3>
+      </div>
+      <div class="card-body">
+        <div class="form">
+
+
+          <div class="form-group">
+            <label for="">Technology</label>
+            <select formControlName="technology_id" class="form-control" #technology_id (change)="filterTrainers(technology_id.value)" required>
+              <option [value]="tech['technology_id']" *ngFor="let tech of technology">{{tech['technology_name']}}
+
+              </option>
+
+            </select>
+            <p style="font-size: 10px;color:red; font: italic;" *ngIf="trainingForm.get('technology_id').invalid && trainingForm.get('technology_id').touched">technology name required</p>
+
+          </div>
+          <div class="form-group">
+            <label for="">Trainer Name</label>
+            <select formControlName="trainer_id" class="form-control" required>
+              <option [value]="trainer['trainer_id']" *ngFor="let trainer of trainers">{{trainer['trainer_name']}}
+               
+              </option> 
+
+              
+            </select>
+            <p style="font-size:10px;color:red; font: italic;" *ngIf="trainingForm.get('trainer_id').invalid && trainingForm.get('trainer_id').touched">trainer name required</p>
+
+          </div>
+          <div class="form-group">
+            <label for="">From</label>
+            <input type="date" class="form-control" formControlName="startDate" required>
+            <p style="font-size: 10px;color:red; font: italic;" *ngIf="trainingForm.get('startDate').invalid && trainingForm.get('startDate').touched">start date is required</p>
+
+          </div>
+          <div class="form-group">
+            <label for="">To</label>
+            <input type="date" class="form-control" formControlName="endDate" required>
+            <p style="font-size: 10px;color:red; font: italic;" *ngIf="trainingForm.get('endDate').invalid && trainingForm.get('endDate').touched">end date is required</p>
+
+          </div>
+
+          <div class="form-group">
+            <label for="">Number of Trainees</label>
+            <input type="number" class="form-control" formControlName="no_of_trainee" required>
+            <p style="font-size: 10px;color:red; font: italic;" *ngIf="trainingForm.get('no_of_trainee').invalid && trainingForm.get('no_of_trainee').touched">No of trainees are required</p>
+          </div>
+          <div class="form-group">
+            <label for="">Comment</label>
+            <textarea formControlName="comment" rows="10" class="form-control"></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+            <button [disabled]="trainingForm.invalid" (click)="onSave()"
+              class="btn btn-success">{{training ? 'Update Request':'Send Request'}}</button>
+            <a (click)="onCancel()" style="margin-left: 10px;" routerLink="" class="btn btn-danger">Cancel</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

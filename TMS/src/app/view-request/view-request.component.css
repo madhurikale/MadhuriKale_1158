@@ -1,0 +1,12 @@
+
+.mysection {
+    
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+    border: 3px solid rgb(221, 223, 221);
+    padding: 20px;
+    
+    font-size:15px;
+  }

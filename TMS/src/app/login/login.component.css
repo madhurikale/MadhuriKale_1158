@@ -1,0 +1,62 @@
+
+.log-in {
+   
+   
+    background:  #9c9993da;
+    text-align: center;
+    padding: 20px;
+    display: grid;
+}
+
+.align-center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+   
+    width:30%;
+    
+}
+
+.input-style {
+    padding: 10px 10px;
+    font-size: 24px;
+    border: solid #ec8a08 2px;
+
+}
+
+.input-style:hover {
+    border: solid #5505d6 3px;
+}
+
+.button-style-basic {
+    padding: 10px 10px;
+    font-size: 24px;
+    background: rgb(4, 87, 11);
+    box-shadow: 0px 0px 8px red !important;
+    color: white;
+   
+}
+
+
+
+.button-style-basic:hover {
+    box-shadow: 0px 0px 20px red !important;
+}
+
+.login-style {
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+    color: white;
+}
+
+.link-style{
+    color: rgb(22, 22, 190);
+}
+
+.header {
+    background:  rgb(141, 13, 13);
+    color: white;
+    padding: 1px;
+    text-align: center;
+    font-size: 25px;
+    width:100%;
+}

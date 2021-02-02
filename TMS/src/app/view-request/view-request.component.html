@@ -1,0 +1,72 @@
+<div class="mysection">
+  <div class="card">
+    <div class="card-header">
+      <h4>Training Request Details</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-bordered">
+
+
+        <tbody *ngIf="trainingRequest">
+          <tr class="d-flex">
+
+            <td class="col-lg-4"><b>Project Manager Name</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.user['user_name']}} </td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>Technology Name</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.technology['technology_name']}}</td>
+          </tr>
+
+          <tr>
+            <td class="col-lg-4"><b>Trainer Name</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.trainer['trainer_name'] }}</td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>Start Date</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['startDate']}} </td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>End Date</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['endDate']}}</td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>No of Trainees</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['no_of_trainee']}}</td>
+          </tr>
+          <tr>
+
+            <td class="col-lg-4"><b>Project Manager Status</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['project_mgr_status']}}</td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>Training Coordinator Status</b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['traning_cor_status'] }}</td>
+          </tr>
+          <tr>
+            <td class="col-lg-4"><b>Comment </b></td>
+
+            <td class="col-lg-8">{{trainingRequest.training['comment']}}</td>
+          </tr>
+
+
+
+
+        </tbody>
+      </table>
+    </div>
+     <div class="card-footer">
+        <button *ngIf="isApprove" (click)="onApprove()" class="btn btn-success" style="margin-right:15px;">Approve</button>
+        <button *ngIf="isEdit" (click)="onEdit()" class="btn btn-warning" style="margin-right:15px;">Edit</button>
+        <button *ngIf="isReject" (click)="onReject()"  class="btn btn-danger">Reject</button>
+    </div>
+  </div>
+ </div>

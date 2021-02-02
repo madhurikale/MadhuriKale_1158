@@ -1,0 +1,27 @@
+<form name="from" [formGroup]="technologyForm">
+    <div class="mysection">
+      <div class="card ">
+        <div class="card-header">
+          <h3>Add Technology</h3>
+        </div>
+        <div class="card-body">
+          <div class="form">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input type="text" class="form-control form-control-lg" formControlName="technology_name" required>
+              <p style="font-size: 10px;color:red; font: italic;" *ngIf="technologyForm.get('technology_name').invalid && technologyForm.get('technology_name').touched">This field is required</p>
+  
+            </div>
+  
+            <div class="form-group">
+              <button [disabled]="technologyForm.invalid" (click)="saveDetails()" class="btn btn-success">Add Trainer</button>
+              <a (click)="onCancel()" style="margin-left: 10px;" routerLink="" class="btn btn-danger">Cancel</a>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  
